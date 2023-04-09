@@ -414,38 +414,35 @@
   </joint>
   <gazebo reference="base_link">
                 <material>Gazebo/White</material>
-                <mu1>0.2</mu1>
-                <mu2>0.2</mu2>
+                
             </gazebo>
   <gazebo reference="1_Link">
                 <material>Gazebo/White</material>
-                <mu1>0.2</mu1>
-                <mu2>0.2</mu2>
+                <selfCollide>true</selfCollide>
             </gazebo>
   <gazebo reference="2_Link">
                 <material>Gazebo/White</material>
-                <mu1>0.2</mu1>
-                <mu2>0.2</mu2>
+                
+                <selfCollide>true</selfCollide>
             </gazebo>
   <gazebo reference="3_Link">
                 <material>Gazebo/White</material>
-                <mu1>0.2</mu1>
-                <mu2>0.2</mu2>
+                
+                <selfCollide>true</selfCollide>
             </gazebo>
   <gazebo reference="4_Link">
                 <material>Gazebo/White</material>
-                <mu1>0.2</mu1>
-                <mu2>0.2</mu2>
+                
+                <selfCollide>true</selfCollide>
             </gazebo>
   <gazebo reference="5_Link">
                 <material>Gazebo/White</material>
-                <mu1>0.2</mu1>
-                <mu2>0.2</mu2>
+                
+                <selfCollide>true</selfCollide>
             </gazebo>
   <gazebo reference="6_Link">
               <material>Gazebo/White</material>
-              <mu1>0.2</mu1>
-              <mu2>0.2</mu2>
+              <selfCollide>true</selfCollide>
           </gazebo>
   <transmission name="axis_joint_1_trans">
                 <type>transmission_interface/SimpleTransmission</type>
