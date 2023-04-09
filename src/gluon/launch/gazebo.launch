@@ -1,6 +1,9 @@
 <launch>
   <include
     file="$(find gazebo_ros)/launch/empty_world.launch" />
+  <param
+    name="robot_description"
+    textfile="$(find gluon)/urdf/gluon.urdf" />
   <node
     name="tf_footprint_base"
     pkg="tf"
@@ -12,6 +15,14 @@
     type="spawn_model"
     args="-file $(find gluon)/urdf/gluon.urdf -urdf -model gluon"
     output="screen" />
+  <!-- <node
+    name="joint_state_publisher"
+    pkg="joint_state_publisher"
+    type="joint_state_publisher" />
+  <node
+    name="robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="robot_state_publisher" /> -->
   <node
     name="fake_joint_calibration"
     pkg="rostopic"

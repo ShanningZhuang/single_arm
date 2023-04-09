@@ -1,2 +1,2 @@
-cm_moveit:gluon:gluon_control:gluon_moveit_config
+cm_moveit:gluon:gluon_moveit_config
 -DCATKIN_DEVEL_PREFIX=/home/s/Desktop/catkin_single_arm/devel -DCMAKE_INSTALL_PREFIX=/home/s/Desktop/catkin_single_arm/install -G Unix Makefiles

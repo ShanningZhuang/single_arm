@@ -2,11 +2,11 @@
 moveit_sim_hw_interface:
   joint_model_group: gluon
   joint_model_group_pose: home_pose
-# Settings for ros_control_boilerplate control loop
+# # Settings for ros_control_boilerplate control loop
 generic_hw_control_loop:
   loop_hz: 300
   cycle_time_error_threshold: 0.01
-# Settings for ros_control hardware interface
+# # Settings for ros_control hardware interface
 hardware_interface:
   joints:
     - axis_joint_1
@@ -21,15 +21,41 @@ hardware_interface:
 joint_state_controller:
   type: joint_state_controller/JointStateController
   publish_rate: 50
-controller_list:
-  - name: gluon_controller
-    action_ns: follow_joint_trajectory
-    default: True
-    type: FollowJointTrajectory
-    joints:
-      - axis_joint_1
-      - axis_joint_2
-      - axis_joint_3
-      - axis_joint_4
-      - axis_joint_5
-      - axis_joint_6
+joint1_controller:
+    type: position_controllers/JointPositionController
+    joint: axis_joint_1
+    #pid: [p: 1,i: 0.01,d: 10.0]
+
+joint2_controller:
+    type: position_controllers/JointPositionController
+    joint: axis_joint_2
+    #gain: {p: 1,i: 0.01,d: 10.0}
+joint3_controller:
+    type: position_controllers/JointPositionController
+    joint: axis_joint_3
+    #gain: {p: 100.0,i: 0.01,d: 10.0}
+joint4_controller:
+    type: position_controllers/JointPositionController
+    joint: axis_joint_4
+    #gain: {p: 100.0,i: 0.01,d: 10.0}
+joint5_controller:
+    type: position_controllers/JointPositionController
+    joint: axis_joint_5
+    #gain: {p: 100.0,i: 0.01,d: 10.0}
+joint6_controller:
+    type: position_controllers/JointPositionController
+    joint: axis_joint_6
+    #pid: {p: 100.0,i: 0.01,d: 10.0}
+# controller_list:
+#   - name: gluon_controller
+#     action_ns: follow_joint_trajectory
+#     default: True
+#     type: FollowJointTrajectory
+#     joints:
+#       - axis_joint_1
+#       - axis_joint_2
+#       - axis_joint_3
+#       - axis_joint_4
+#       - axis_joint_5
+#       - axis_joint_6
+      

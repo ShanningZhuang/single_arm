@@ -5,7 +5,7 @@
 <robot
   name="gluon">
   <link
-    name="dummy">
+    name="world">
   </link>
   <link
     name="base_link">
@@ -48,13 +48,13 @@
     </collision>
   </link>
   <joint
-    name="dummy_joint"
+    name="world_fix"
     type="fixed">
     <origin
-        xyz="0 0 0"
+        xyz="0 0 0.1"
         rpy="0 0 0" />
     <parent
-        link="dummy" />
+        link="world" />
     <child
         link="base_link" />
   </joint>
@@ -115,6 +115,7 @@
       upper="2.79"
       effort="30"
       velocity="3.14" />
+    <dynamics damping="0" friction="0"/>
   </joint>
   <link
     name="2_Link">
@@ -173,6 +174,7 @@
       upper="1.54"
       effort="30"
       velocity="3.14" />
+        <dynamics damping="0" friction="0"/>
   </joint>
   <link
     name="3_Link">
@@ -231,6 +233,7 @@
       upper="2.79"
       effort="30"
       velocity="3.14" />
+    <dynamics damping="0" friction="0"/>
   </joint>
   <link
     name="4_Link">
@@ -289,6 +292,7 @@
       upper="2.79"
       effort="30"
       velocity="3.14" />
+    <dynamics damping="0" friction="0"/>
   </joint>
   <link
     name="5_Link">
@@ -347,6 +351,7 @@
       upper="2.79"
       effort="30"
       velocity="3.14" />
+    <dynamics damping="0" friction="0"/>
   </joint>
   <link
     name="6_Link">
@@ -405,5 +410,108 @@
       upper="2.79"
       effort="30"
       velocity="3.14" />
+    <dynamics damping="0" friction="0"/>
   </joint>
+  <gazebo reference="base_link">
+                <material>Gazebo/White</material>
+                <mu1>0.2</mu1>
+                <mu2>0.2</mu2>
+            </gazebo>
+  <gazebo reference="1_Link">
+                <material>Gazebo/White</material>
+                <mu1>0.2</mu1>
+                <mu2>0.2</mu2>
+            </gazebo>
+  <gazebo reference="2_Link">
+                <material>Gazebo/White</material>
+                <mu1>0.2</mu1>
+                <mu2>0.2</mu2>
+            </gazebo>
+  <gazebo reference="3_Link">
+                <material>Gazebo/White</material>
+                <mu1>0.2</mu1>
+                <mu2>0.2</mu2>
+            </gazebo>
+  <gazebo reference="4_Link">
+                <material>Gazebo/White</material>
+                <mu1>0.2</mu1>
+                <mu2>0.2</mu2>
+            </gazebo>
+  <gazebo reference="5_Link">
+                <material>Gazebo/White</material>
+                <mu1>0.2</mu1>
+                <mu2>0.2</mu2>
+            </gazebo>
+  <gazebo reference="6_Link">
+              <material>Gazebo/White</material>
+              <mu1>0.2</mu1>
+              <mu2>0.2</mu2>
+          </gazebo>
+  <transmission name="axis_joint_1_trans">
+                <type>transmission_interface/SimpleTransmission</type>
+                <joint name="axis_joint_1">
+                    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                </joint>
+                <actuator name="axis_joint_1_motor">
+                    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                    <mechanicalReduction>1</mechanicalReduction>
+                </actuator>
+            </transmission>
+  <transmission name="axis_joint_2_trans">
+                <type>transmission_interface/SimpleTransmission</type>
+                <joint name="axis_joint_2">
+                    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                </joint>
+                <actuator name="axis_joint_2_motor">
+                    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                    <mechanicalReduction>1</mechanicalReduction>
+                </actuator>
+            </transmission>
+  <transmission name="axis_joint_3_trans">
+                <type>transmission_interface/SimpleTransmission</type>
+                <joint name="axis_joint_3">
+                    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                </joint>
+                <actuator name="axis_joint_3_motor">
+                    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                    <mechanicalReduction>1</mechanicalReduction>
+                </actuator>
+            </transmission>
+  <transmission name="axis_joint_4_trans">
+                <type>transmission_interface/SimpleTransmission</type>
+                <joint name="axis_joint_4">
+                    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                </joint>
+                <actuator name="axis_joint_4_motor">
+                    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                    <mechanicalReduction>1</mechanicalReduction>
+                </actuator>
+            </transmission>
+  <transmission name="axis_joint_5_trans">
+                <type>transmission_interface/SimpleTransmission</type>
+                <joint name="axis_joint_5">
+                    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                </joint>
+                <actuator name="axis_joint_5_motor">
+                    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                    <mechanicalReduction>1</mechanicalReduction>
+                </actuator>
+            </transmission>
+  <transmission name="axis_joint_6_trans">
+              <type>transmission_interface/SimpleTransmission</type>
+              <joint name="axis_joint_6">
+                  <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+              </joint>
+              <actuator name="axis_joint_6_motor">
+                  <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                  <mechanicalReduction>1</mechanicalReduction>
+              </actuator>
+          </transmission>
+
+
+
+  <gazebo>
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so"/>
+  </gazebo>
+
 </robot>

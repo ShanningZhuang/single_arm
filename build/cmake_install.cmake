@@ -131,7 +131,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/s/Desktop/catkin_single_arm/build/gtest/cmake_install.cmake")
-  include("/home/s/Desktop/catkin_single_arm/build/gluon_control/cmake_install.cmake")
   include("/home/s/Desktop/catkin_single_arm/build/gluon/cmake_install.cmake")
   include("/home/s/Desktop/catkin_single_arm/build/gluon_moveit_config/cmake_install.cmake")
   include("/home/s/Desktop/catkin_single_arm/build/cm_moveit/cmake_install.cmake")
